@@ -22,7 +22,10 @@ app.get('/add', (c) => {
   const b = bParam === undefined ? 0 : Number(bParam)
 
   if (Number.isNaN(a) || Number.isNaN(b)) {
-    return c.json({ error: 'query parameters "a" and "b" must be numbers' }, 400)
+    return c.json(
+      { error: 'query parameters "a" and "b" must be numbers' },
+      400,
+    )
   }
 
   const result = addFunc(a, b)
