@@ -9,11 +9,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "solid-js": "^1.8.0",
+    "solid-js": "catalog:",
     "misc-lib": "workspace:*"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "vite-plugin-solid": "^2.8.0"
+    "vite": "catalog:",
+    "vite-plugin-solid": "catalog:"
   }
 }
