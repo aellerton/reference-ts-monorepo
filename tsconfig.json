@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./lib/misc-lib"
+    },
+    {
+      "path": "./svc/apisvc"
+    },
+    {
+      "path": "./app/webapp"
+    },
+    {
+      "path": "./tools/misc-cli"
+    }
+  ]
+}
