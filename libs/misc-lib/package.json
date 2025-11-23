@@ -12,8 +12,13 @@
       "import": "./dist/index.js"
     }
   },
+  "devDependencies": {
+    "vitest": "catalog:"
+  },
   "scripts": {
     "build": "tsc -b",
-    "dev": "tsc -b -w"
+    "dev": "tsc -b -w",
+    "test": "vitest run -w",
+    "test-1": "vitest run"
   }
 }

@@ -12,5 +12,6 @@
       "path": "../../libs/misc-lib"
     }
   ],
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.ts"]
 }
