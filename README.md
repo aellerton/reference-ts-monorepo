@@ -104,3 +104,10 @@ Pros and cons of this approach, as Gemini wrote:
 > - Lag: There is a tiny delay (milliseconds to seconds) between saving the lib file and the watcher finishing the build so the app can pick it up.
 
 This blog post I found has details on various approaches: https://nx.dev/blog/managing-ts-packages-in-monorepos
+
+## Using
+
+- Clone or download.
+- Optional: Remove git history, `rm -rf .git`
+- Optional: Remove the LICENSE file and `license` fields in all `package.json` files.
+- Copy or rename libs / svcs / apps as you prefer.

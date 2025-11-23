@@ -1,5 +1,6 @@
 {
   "name": "apisvc",
+  "license": "0BSD",
   "private": true,
   "type": "module",
   "scripts": {

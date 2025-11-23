@@ -1,5 +1,6 @@
 {
   "name": "misc-lib",
+  "license": "0BSD",
   "version": "0.0.1",
   "private": true,
   "type": "module",

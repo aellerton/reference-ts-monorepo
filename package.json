@@ -1,5 +1,6 @@
 {
   "name": "monorepo-root",
+  "license": "0BSD",
   "private": true,
   "type": "module",
   "scripts": {
