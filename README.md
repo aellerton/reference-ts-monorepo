@@ -111,4 +111,4 @@ This blog post I found has details on various approaches: https://nx.dev/blog/ma
 - Clone or download.
 - Optional: Remove git history, `rm -rf .git`
 - Optional: Remove the LICENSE file and `license` fields in all `package.json` files.
-- Copy or rename libs / svcs / apps as you prefer.
+- Copy or rename libs / svcs / apps / tools as you prefer.

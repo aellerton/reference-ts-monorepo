@@ -10,7 +10,5 @@
       "path": "../../libs/misc-lib"
     }
   ],
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }

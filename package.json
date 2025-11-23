@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc -b",
-    "dev": "concurrently \"npm:dev:*\" --kill-others-on-fail",
+    "clean": "rm -rf {apps,libs,svcs,tools}/*/{dist,tsconfig.tsbuildinfo}",
+    "dev": "pnpm run \"/^dev:.*/\"",
     "dev:libs": "tsc -b -w --preserveWatchOutput",
     "dev:svsc": "pnpm --filter apisvc dev",
     "dev:web": "pnpm --filter webapp dev",
@@ -13,7 +14,6 @@
     "test": "echo 'No tests yet'"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tsx": "^4.19.0",
