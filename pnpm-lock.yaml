@@ -18,12 +18,21 @@ catalogs:
     hono:
       specifier: ^4.0.0
       version: 4.10.6
+    prettier:
+      specifier: ^3.6.2
+      version: 3.6.2
+    prettier-plugin-tailwindcss:
+      specifier: ^0.7.1
+      version: 0.7.1
     solid-js:
       specifier: ^1.8.0
       version: 1.9.10
     tsx:
       specifier: ^4.19.0
       version: 4.20.6
+    typescript:
+      specifier: ^5.7.0
+      version: 5.9.3
     vite:
       specifier: ^5.0.0
       version: 5.4.21
@@ -39,17 +48,20 @@ importers:
   .:
     devDependencies:
       prettier:
-        specifier: ^3.6.2
+        specifier: 'catalog:'
         version: 3.6.2
       prettier-plugin-tailwindcss:
-        specifier: ^0.7.1
+        specifier: 'catalog:'
         version: 0.7.1(prettier@3.6.2)
       tsx:
-        specifier: ^4.19.0
+        specifier: 'catalog:'
         version: 4.20.6
       typescript:
-        specifier: ^5.7.0
+        specifier: 'catalog:'
         version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.13(@types/node@20.19.25)(tsx@4.20.6)
 
   apps/webapp:
     dependencies:
