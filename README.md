@@ -112,3 +112,17 @@ This blog post I found has details on various approaches: https://nx.dev/blog/ma
 - Optional: Remove git history, `rm -rf .git`
 - Optional: Remove the LICENSE file and `license` fields in all `package.json` files.
 - Copy or rename libs / svcs / apps / tools as you prefer.
+
+## Why: import .js
+
+It looks wrong to import a `.js` when this is a TypeScript repo. Here's how I understand it:
+
+- TypeScript is a Compiler: Its job is to turn misc.ts into misc.js.
+
+- Modern nodejs is ESM and ESM is strict. Writing `import ... from './misc'` will crash node;
+  node demands extensions.
+
+- Apparently the TypeScript authors took the view of not magically rewriting imports. Basically,
+  just import `.js` and the compiler knows that you mean `.ts`.
+- IDEs are smart enough to know that the `.ts` file is there and to resolve types correctly, and
+  the build knows to compile and leave the import string as-is.
