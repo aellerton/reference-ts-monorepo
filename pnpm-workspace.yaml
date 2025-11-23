@@ -1,7 +1,7 @@
 packages:
-  - lib/*
-  - svc/*
-  - app/*
+  - libs/*
+  - svcs/*
+  - apps/*
   - tools/*
 onlyBuiltDependencies:
   - esbuild

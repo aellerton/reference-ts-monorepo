@@ -2,13 +2,13 @@
   "files": [],
   "references": [
     {
-      "path": "./lib/misc-lib"
+      "path": "./libs/misc-lib"
     },
     {
-      "path": "./svc/apisvc"
+      "path": "./svcs/apisvc"
     },
     {
-      "path": "./app/webapp"
+      "path": "./apps/webapp"
     },
     {
       "path": "./tools/misc-cli"

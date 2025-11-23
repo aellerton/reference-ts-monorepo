@@ -18,13 +18,13 @@ prefer that.
 Structure:
 
 ```
-- lib
+- libs
   \- misc-lib    = Some reusable functions
 
-- svc
+- svcs
   \- apisvc      = An API service using the library (I used Hono)
 
-- app
+- apps
   \- webapp      = A webapp using the library (I used SolidJS)
 
 - tools
@@ -83,7 +83,8 @@ have to run `tsc -b -w` (`pnpm dev:lib`) all the time when working, which I find
 
 Pros and cons of this approach, as Gemini wrote:
 
-> The library behaves exactly like a package downloaded from npm. The consumers (App/API) do not compile the library; they just consume the artifacts.
+> The library behaves exactly like a package downloaded from npm.
+> Consumers like services, webapps and tools do not compile the library, they just consume the artifacts.
 >
 > Pros:
 >
@@ -95,11 +96,11 @@ Pros and cons of this approach, as Gemini wrote:
 > - Native Node Support: Since apisvc imports a real `.js` file from dist, you don't need any special
 >   runtime loaders or bundlers for production. Standard node dist/index.js works perfectly.
 > - IDE "Go to Definition": Because we enabled declarationMap: true, clicking a function in the App
->   jumps to the Source of the library, not the .d.ts file, giving you the best of both worlds.
+>   jumps to the Source of the library, not the `.d.ts` file, giving you the best of both worlds.
 >
 > Cons:
 >
-> - DX Friction: You must have a terminal running tsc -b -w (watch mode) for the library. If you
+> - DX Friction: You must have a terminal running `tsc -b -w `(watch mode) for the library. If you
 >   forget this, you change code in the lib, and the app doesn't see it.
 > - Lag: There is a tiny delay (milliseconds to seconds) between saving the lib file and the watcher finishing the build so the app can pick it up.
 

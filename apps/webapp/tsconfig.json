@@ -9,8 +9,10 @@
   },
   "references": [
     {
-      "path": "../../lib/misc-lib"
+      "path": "../../libs/misc-lib"
     }
   ],
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

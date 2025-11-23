@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div style={{ 'font-family': 'sans-serif', padding: '2rem' }}>
-      <h1>{helloWorld('SolidJS')}</h1>
-      <p>Using misc-lib: 5 + 5 = {addFunc(5, 5)}</p>
+      <h2>{helloWorld('SolidJS')}</h2>
+      <p>misc-lib directly: 5 + 5 = {addFunc(5, 5)}</p>
 
       <button onClick={() => setCount((c) => c + 1)}>Count is {count()}</button>
     </div>

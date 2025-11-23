@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc -b",
     "dev": "concurrently \"npm:dev:*\" --kill-others-on-fail",
-    "dev:lib": "tsc -b -w --preserveWatchOutput",
-    "dev:svc": "pnpm --filter apisvc dev",
+    "dev:libs": "tsc -b -w --preserveWatchOutput",
+    "dev:svsc": "pnpm --filter apisvc dev",
     "dev:web": "pnpm --filter webapp dev",
     "format": "prettier --write .",
     "test": "echo 'No tests yet'"
