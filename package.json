@@ -7,6 +7,7 @@
     "build": "tsc -b",
     "clean": "rm -rf {apps,libs,svcs,tools}/*/{dist,tsconfig.tsbuildinfo}",
     "dev": "pnpm run \"/^dev:.*/\"",
+    "wsldev": "HOST=0.0.0.0 pnpm run \"/^dev:.*/\"",
     "dev:libs": "tsc -b -w --preserveWatchOutput",
     "dev:svsc": "pnpm --filter apisvc dev",
     "dev:web": "pnpm --filter webapp dev",

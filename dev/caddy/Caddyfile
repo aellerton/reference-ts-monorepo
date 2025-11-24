@@ -1,0 +1,30 @@
+{
+	debug
+
+	# This prevents Caddy from trying to obtain a real Let's Encrypt cert
+	# and forces it to use a local self-signed authority.
+	# This is like "tls internal" on all sites in the Caddyfile.
+	local_certs
+}
+
+mydemo.localhost {
+	# tls internal
+
+	# handle_path /api/* {
+	handle /api/* {
+		reverse_proxy :9000
+	}
+
+	handle /time {
+		respond <<TXT
+Caddy says current time: {time.now.common_log}
+hostname: {system.hostname}
+The end.
+
+TXT
+	}
+
+	handle /* {
+		reverse_proxy :3001
+	}
+}

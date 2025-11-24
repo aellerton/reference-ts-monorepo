@@ -1,0 +1,35 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #ddd;
+  box-sizing: border-box;
+}
+
+.card {
+  background: white;
+  border: 1px solid #444;
+}
+
+.card .card-heading {
+  background: #EEF;
+  padding: 1rem;
+}
+
+.card .card-body {
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}

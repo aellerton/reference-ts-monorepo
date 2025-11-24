@@ -4,7 +4,7 @@ import { addFunc, helloWorld } from 'misc-lib'
 export function makeApp() {
   const app = new Hono()
 
-  app.get('/', (c) => {
+  app.get('/api/', (c) => {
     const sum = addFunc(10, 20)
     const msg = helloWorld('Hono Service')
     return c.json({
@@ -14,7 +14,7 @@ export function makeApp() {
     })
   })
 
-  app.get('/add', (c) => {
+  app.get('/api/add', (c) => {
     const aParam = c.req.query('a')
     const bParam = c.req.query('b')
 
@@ -35,5 +35,11 @@ export function makeApp() {
       result,
     })
   })
+
+  app.get('/api/hello', (c) => {
+    const name = c.req.query('name') || 'World'
+    return c.text('Hello, ' + name)
+  })
+
   return app
 }
