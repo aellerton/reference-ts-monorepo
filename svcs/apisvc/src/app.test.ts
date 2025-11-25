@@ -8,8 +8,8 @@ describe('API Service', () => {
     app = makeApp()
   })
 
-  it('GET / returns 200 and correct JSON structure', async () => {
-    const res = await app.request('/')
+  it('GET /api/ returns 200 and correct JSON structure', async () => {
+    const res = await app.request('/api/')
     expect(res.status).toBe(200)
     const body = await res.json()
 
@@ -20,12 +20,12 @@ describe('API Service', () => {
     })
   })
 
-  it('GET /add returns 200 and correct JSON structure', async () => {
+  it('GET /api/add returns 200 and correct JSON structure', async () => {
     let a = 10,
       b = 32
 
     const res = await app.request(
-      `/add?${new URLSearchParams({ a: '' + a, b: '' + b })}`,
+      `/api/add?${new URLSearchParams({ a: '' + a, b: '' + b })}`,
     )
     expect(res.status).toBe(200)
 

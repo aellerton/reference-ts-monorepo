@@ -52,19 +52,23 @@ Load the webapp:
 Test the API:
 
 ```bash
-$ curl -s localhost:9000 | jq .
+$ curl -s localhost:9000/api | jq .
 {
   "service": "apisvc",
   "message": "Hello Hono Service from misc-lib",
   "calculation": "10 + 20 = 30"
 }
 
-$ curl -s 'localhost:9000/add?a=2&b=4' | jq .
+$ curl -s 'localhost:9000/api/add?a=2&b=4' | jq .
 {
   "a": 2,
   "b": 4,
   "result": 6
 }
+
+$ curl localhost:9000/api/hello
+Hello World from misc-lib
+
 ```
 
 To format everything:
@@ -126,3 +130,18 @@ It looks wrong to import a `.js` when this is a TypeScript repo. Here's how I un
   just import `.js` and the compiler knows that you mean `.ts`.
 - IDEs are smart enough to know that the `.ts` file is there and to resolve types correctly, and
   the build knows to compile and leave the import string as-is.
+
+
+## Updating dependencies in the pnpm-workspace / catalog
+
+Many package versions are listed in the `pnpm-workspace.yaml` file, shared across many packages.
+Updating that isn't fully incorporated into `pnpm` at the time of writing, but this separate
+tool does the job:
+
+```bash
+npx pnpm-update-catalogs -L
+# then as usual:
+pnpm install
+```
+
+Read more: https://github.com/pnpm/pnpm/issues/8641
