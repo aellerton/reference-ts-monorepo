@@ -37,8 +37,8 @@ export function makeApp() {
   })
 
   app.get('/api/hello', (c) => {
-    const name = c.req.query('name') || 'World'
-    return c.text('Hello, ' + name)
+    const name = c.req.query('name')
+    return c.text(helloWorld(name))
   })
 
   return app

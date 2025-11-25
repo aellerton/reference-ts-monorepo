@@ -3,12 +3,14 @@ import { Card } from './Card'
 
 const addFuncRemote = (a: number, b: number): Promise<string> => {
   const url = `/api/add?${new URLSearchParams({ a: '' + a, b: '' + b })}`
-  return fetch(url).then(r => r.ok ? r.json() : { error: 'Status ' + r.status })
-    .then(r => {
+  return fetch(url)
+    .then((r) => (r.ok ? r.json() : { error: 'Status ' + r.status }))
+    .then((r) => {
       if (r.error) return r.error
       return `${r.a} + ${r.b} = ${r.result}`
       // console.log('result of add', r)
-    }).catch(error => {
+    })
+    .catch((error) => {
       return `failed: ${error}`
     }) // .then(() => -a * b)
 }
@@ -16,14 +18,15 @@ const addFuncRemote = (a: number, b: number): Promise<string> => {
 const helloWorldRemote = (name?: string): Promise<string> => {
   const url = '/api/hello' + (name == null ? '' : `?name=${name}`)
   return fetch(url)
-    .then(r => r.ok ? r.text() : 'Status ' + r.status)
-    .catch(error => {
+    .then((r) => (r.ok ? r.text() : 'Status ' + r.status))
+    .catch((error) => {
       // console.error('failed to hello', error)
       return '' + error
     })
 }
 
-const randBetween = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min
+const randBetween = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min + 1)) + min
 
 export const DemoRemoteApiComponent: Component = () => {
   const [name, setName] = createSignal('World')
@@ -40,14 +43,23 @@ export const DemoRemoteApiComponent: Component = () => {
     queueMicrotask(addFunc)
   }
   return (
-    <Card heading="Local remote API">
+    <Card heading="Via HTTP">
       <div>
         <h3>Hello API:</h3>
         <div class="row">
-          <input type="text" style="width: 5rem" placeholder="Name" value={name()} onChange={(e) => setName(e.currentTarget.value)} />
+          <input
+            type="text"
+            style="width: 5rem"
+            placeholder="Name"
+            value={name()}
+            onChange={(e) => setName(e.currentTarget.value)}
+          />
           <button onClick={helloWorld}>Update</button>
         </div>
-        <div class="row" style="justify-content: space-between; align-items: center;">
+        <div
+          class="row"
+          style="justify-content: space-between; align-items: center;"
+        >
           <p>Result:</p>
           <p style="font-family: monospace">{nameOutput()}</p>
         </div>
@@ -55,12 +67,27 @@ export const DemoRemoteApiComponent: Component = () => {
       <div>
         <h3>Add:</h3>
         <div class="row">
-          <input type="text" style="width: 5rem" placeholder="A" value={'' + a()} onChange={(e) => setA(Number(e.currentTarget.value))} />
-          <input type="text" style="width: 5rem" placeholder="B" value={'' + b()} onChange={(e) => setB(Number(e.currentTarget.value))} />
+          <input
+            type="text"
+            style="width: 5rem"
+            placeholder="A"
+            value={'' + a()}
+            onChange={(e) => setA(Number(e.currentTarget.value))}
+          />
+          <input
+            type="text"
+            style="width: 5rem"
+            placeholder="B"
+            value={'' + b()}
+            onChange={(e) => setB(Number(e.currentTarget.value))}
+          />
           <button onClick={makeRand}>Rng</button>
           <button onClick={addFunc}>Add</button>
         </div>
-        <div class="row" style="justify-content: space-between; align-items: center;">
+        <div
+          class="row"
+          style="justify-content: space-between; align-items: center;"
+        >
           <p>Result:</p>
           <p style="font-family: monospace">{calcOutput()}</p>
         </div>

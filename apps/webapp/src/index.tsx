@@ -14,8 +14,10 @@ function App() {
     <div class="row">
       <DemoLocalLibComponent />
       <DemoRemoteApiComponent />
-      <Card heading='Plain boring signal'>
-        <button onClick={() => setCount((c) => c + 1)}>Count is {count()}</button>
+      <Card heading="Plain boring signal">
+        <button onClick={() => setCount((c) => c + 1)}>
+          Count is {count()}
+        </button>
       </Card>
     </div>
   )

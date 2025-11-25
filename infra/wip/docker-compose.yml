@@ -1,21 +1,19 @@
 # Local development compose file.
 # This expects local dev servics and apps to be running OUTSIDE of the compose.
 services:
-
   caddy:
     image: caddy:alpine
-    container_name: local-proxy
+    # container_name: local-proxy
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ../local/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     extra_hosts:
       # This allows Caddy (inside Docker) to reach localhost:3000 (outside Docker)
-      - "host.docker.internal:host-gateway"
-
+      - 'host.docker.internal:host-gateway'
 
 volumes:
   # postgres_data:
